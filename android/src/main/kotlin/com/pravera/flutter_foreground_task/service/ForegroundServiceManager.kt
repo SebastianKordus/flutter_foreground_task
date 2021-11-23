@@ -93,11 +93,12 @@ class ForegroundServiceManager {
 			val intent = Intent(context, ForegroundService::class.java)
 			saveServiceAction(context, ForegroundServiceAction.STOP)
 			clearOptions(context)
-
+			/** 
 			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
 				context.startForegroundService(intent)
 			else
 				context.startService(intent)
+			*/
 		} catch (e: Exception) {
 			return false
 		}

@@ -126,6 +126,7 @@ class ForegroundService: Service(), MethodChannel.MethodCallHandler {
 		super.onDestroy()
 		releaseLockMode()
 		destroyForegroundTask()
+
 		if (isSticky && serviceAction != ForegroundServiceAction.STOP) {
 			Log.d(TAG, "The foreground service was terminated due to an unexpected problem. Set a restart alarm.")
 			stopForegroundService()
