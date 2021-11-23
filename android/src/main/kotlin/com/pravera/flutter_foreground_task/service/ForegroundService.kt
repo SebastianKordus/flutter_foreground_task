@@ -128,7 +128,7 @@ class ForegroundService: Service(), MethodChannel.MethodCallHandler {
 		destroyForegroundTask()
 		if (isSticky && serviceAction != ForegroundServiceAction.STOP) {
 			Log.d(TAG, "The foreground service was terminated due to an unexpected problem. Set a restart alarm.")
-			setRestartAlarm()
+			/**setRestartAlarm()*/
 		}
 	}
 
@@ -257,7 +257,7 @@ class ForegroundService: Service(), MethodChannel.MethodCallHandler {
 			}
 		}
 	}
-
+/** 
 	private fun setRestartAlarm() {
 		val calendar = Calendar.getInstance().apply {
 			timeInMillis = System.currentTimeMillis()
@@ -271,6 +271,8 @@ class ForegroundService: Service(), MethodChannel.MethodCallHandler {
 		val alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
 		alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.timeInMillis, sender)
 	}
+	
+	*/
 
 	private fun executeDartCallback(callbackHandle: Long?) {
 		// If there is no callback handle, the code below will not be executed.
